@@ -15,12 +15,12 @@ permalink: /about/
 
 <!-- ===== Replace these five paths ===== -->
 <div class="gallery">
-  <img src="../assets/img/about/0321_MG_5664-1.jpg" alt="pic1" loading="lazy">
-  <img src="../assets/img/about/3627836184426511142.jpeg" alt="pic2" loading="lazy">
-  <img src="../assets/img/about/8158374441278797681.jpeg" alt="pic3" loading="lazy">
-  <img src="../assets/img/about/13175091418104108592.jpeg" alt="pic4" loading="lazy">
-  <img src="../assets/img/about/IMG_0332.jpg" alt="pic5" loading="lazy">
-  <img src="../assets/img/about/IMG_1409.jpg" alt="pic5" loading="lazy">
+  <img src="/assets/img/about/0321_MG_5664-1.jpg" alt="pic1" loading="lazy">
+  <img src="/assets/img/about/3627836184426511142.jpeg" alt="pic2" loading="lazy">
+  <img src="/assets/img/about/8158374441278797681.jpeg" alt="pic3" loading="lazy">
+  <img src="/assets/img/about/13175091418104108592.jpeg" alt="pic4" loading="lazy">
+  <img src="/assets/img/about/IMG_0332.jpg" alt="pic5" loading="lazy">
+  <img src="/assets/img/about/IMG_1409.jpg" alt="pic5" loading="lazy">
 </div>
 
 
