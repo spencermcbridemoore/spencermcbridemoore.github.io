@@ -1,10 +1,10 @@
 ---
-title: Placed in 2019 IBM Quantum Hackathon
+title: "Placed in 2019 IBM Quantum Hackathon: Part 1"
 author: Spencer Moore
 date: 2020-02-01
 categories: [hackathon, quantum computing]
 tags: [IBM, hackathon, quantum computing]
-description: "IBM Grover's Algorithm Hackathon"
+description: "IBM Grover's Algorithm Hackathon: overview "
 ---
 
 ## IBM Quantum Challenge — Using Qiskit
