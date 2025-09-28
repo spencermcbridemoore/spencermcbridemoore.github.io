@@ -7,14 +7,14 @@ tags: [IBM, hackathon, quantum computing]
 description: "IBM Grover's Algorithm Hackathon: overview "
 ---
 
-## IBM Quantum Challenge — Using Qiskit
+## IBM Quantum Challenge 2019 — Using Qiskit
 ![IBM Quantum Challenge overview](..\assets\img\posts\2019-q-hackathon-1to4_qhub_collage.png)
 
-A four-panel collage that introduces the virtual hackathon, spells out the intended audience (“not familiar” vs. “have studied” quantum computing), and shows the web portal and final challenge screen.
+First four slides of my presentation of the virtual hackathon, spells out the intended audience (“not familiar” vs. “have studied” quantum computing), and shows the web portal and final challenge screen.
 
 ---
 
-## Terminology
+# Terminology
 ![Terminology slide](..\assets\img\posts\2019-q-hackathon-14to18.gif)
 
 Defines **state**, **measurement**, and **calculation** while showing a canonical N-qubit circuit diagram.
@@ -29,9 +29,21 @@ Highlights `Result.get_statevector()` in the Qiskit API to connect the theory wi
 ---
 
 ## Google vs. IBM
+
+Here is IBM's paper discussing Google’s Sycamore 54-qubit computer which, as I chave disucssed, is described by a state vector of $2^{54}$ complex numbers. This state can (utilizing a few tricks) just barely fit into the with the Summit supercomputer, listing node counts and aggregate RAM.
+
 ![Google vs. IBM slide](..\assets\img\posts\2019-q-hackathon-31.gif)
 
-Contrasts Google’s Sycamore claim with IBM’s Summit supercomputer paper, listing node counts and aggregate RAM.
+$$
+\begin{aligned}
+& \text{Number of Petabytes (PB)}=2^{N}\,\cdot M \cdot\frac{1\,\,\text{Petabyte}}{10^{15}\,\,\text{Bytes}} \\
+& M = \text{Bytes/Complex-number} N=\text{Qubit Count} \\
+& \text{Example:}\quad M=8 \text{ (Complex128)},N=54~\Rightarrow~\text{PB}\approx 144.12
+\end{aligned}
+$$
+
+
+So we can see here that (as IBM gets into in their paper) the size of the state vector is not theoretical. It does require 
 
 ---
 
@@ -42,7 +54,7 @@ Shows how circuit measurements map to classical bit-strings \(C_0 … C_{2^N-1}\
 
 ---
 
-## Grover’s Algorithm with 3 Qubits
+# Grover’s Algorithm with 3 Qubits
 ![Grover 3-qubit overview](..\assets\img\posts\2019-q-hackathon-61to64.gif)
 
 Top: textbook block diagram of the algorithm.  
