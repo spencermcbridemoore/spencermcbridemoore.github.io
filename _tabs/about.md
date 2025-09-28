@@ -28,7 +28,11 @@ permalink: /about/
 
 <!--- ![Photo of Durham skyline](../assets/img/about/durham.jpg) -->
 
-I was born and raised in **Durham, North Carolina**—though I've had the good fortune to travel widely and even live overseas. In **Research Triangle** home, splitting most of my adult life between Durham early on and then Raleigh getting my bachelor's and master's in physics at NC State University. After getting my bachelors
+I was born and raised in **Durham, North Carolina**—though I've had the good fortune to travel widely and even live overseas. In **Research Triangle** home, splitting most of my adult life between Durham early on and then Raleigh getting my bachelor's and master's in physics at NC State University. It was at this time that I was able to go from numerical physics to studying quantum information placing in multiple hackathons even optimizing specific algorithms for "practice problems" in quantum computing.
+
+After taking a job at Coldquanta I spent a few years in Boulder Colorado before applying PhD programs and taking an offer at University of Central Florida where [I am currently working under Dr. Zhongzhou Chen!](https://sciences.ucf.edu/physics/person/zhongzhou-chen/)(also [here is a link to his personal website/blog](https://zhongzhou.github.io/the-learning-plumber/)). 
+
+Our current work is studying Large Language Models and the dramatic changes they are already bringing to every aspect of how we teach Physics. The incredible pleasant surprise I have had is that between work in quantum computing and numerical methods I had most of the computer science building blocks to dive into the programming and math of Large Language models. Hoping to have more blog posts here about how that goes! I expect to soon have a tab on here outlining online resources to dig into the subject...
 
 # Education
 
@@ -40,7 +44,11 @@ I was born and raised in **Durham, North Carolina**—though I've had the good f
   * B.S. Physics, 2017
   * M.S. Physics, 2019
 
-# Research Experience & Publications
+I include here a slide from a presentation that sums up my history as a researcher:
+
+![Background](..\assets\img\about\about-numerical-integration-presentation-3.png)
+
+# Publications
 
 <!--- ![Los Alamos Neutron Science Center](/assets/img/about/lansce.jpg) -->
 
@@ -59,6 +67,16 @@ During my undergraduate and graduate years I conducted neutron‑physics researc
 * *Search for Dark‑Matter Decay of the Free Neutron: n → χ + e⁺e⁻*
   [https://arxiv.org/abs/1803.10890](https://arxiv.org/abs/1803.10890)
 
+# Research Expertise & Examples
+
+## Laboratory/Experimental in AMO & Particle Physics
+
+![Laboratory/Experimental Physics](..\assets\img\about\about-numerical-integration-presentation-4.png)
+
+## Numerical/Modeling in Computational Physics (AMO, Nuclear, Quantum Computing)
+
+![Computational/Numerical Physics ](..\assets\img\about\about-numerical-integration-presentation-5.png)
+
 # Selected Projects
 
 <!--- ![GPU computation visual](/assets/img/about/cuda.jpg) -->
@@ -67,7 +85,7 @@ During my undergraduate and graduate years I conducted neutron‑physics researc
 
 Ported 10‑variable Cash–Karp Runge–Kutta neutron‑transport code to CUDA, achieving efficient double‑precision parallelism and gaining hard‑won experience with mixed GCC/NVCC build pipelines and CMake.
 
-[Proejct github link here](https://github.com/NCSUNuclearPhysics/CUDA_UCN_SPIN)
+[Project github link here](https://github.com/NCSUNuclearPhysics/CUDA_UCN_SPIN)
 # Awards & Highlights
 
 
