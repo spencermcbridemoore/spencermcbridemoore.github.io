@@ -46,7 +46,7 @@ Our current work is studying Large Language Models and the dramatic changes they
 
 I include here a slide from a presentation that sums up my history as a researcher:
 
-![Background](..\assets\img\about\about-numerical-integration-presentation-3.png)
+![Background](/assets/img/about/about-numerical-integration-presentation-3.png)
 
 # Publications
 
@@ -71,11 +71,11 @@ During my undergraduate and graduate years I conducted neutron‑physics researc
 
 ## Laboratory/Experimental in AMO & Particle Physics
 
-![Laboratory/Experimental Physics](..\assets\img\about\about-numerical-integration-presentation-4.png)
+![Laboratory/Experimental Physics](/assets/img/about/about-numerical-integration-presentation-4.png)
 
 ## Numerical/Modeling in Computational Physics (AMO, Nuclear, Quantum Computing)
 
-![Computational/Numerical Physics ](..\assets\img\about\about-numerical-integration-presentation-5.png)
+![Computational/Numerical Physics ](/assets/img/about/about-numerical-integration-presentation-5.png)
 
 # Selected Projects
 
