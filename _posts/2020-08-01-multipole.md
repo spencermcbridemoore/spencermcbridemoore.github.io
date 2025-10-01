@@ -1,9 +1,9 @@
 ---
-title: Unreal Engine Multipole Modeling
+title: "Unreal Engine Multipole Modeling"
 author: Spencer Moore
-date: 2020-08-01
+date: 2020-06-01
 categories: [Unreal Engine, Education]
 tags: [Unreal Engine, Multipoles, Education]
-description: "IBM Grover's Algorithm Hackathon"
+description: "Multipole Moments"
 ---
 

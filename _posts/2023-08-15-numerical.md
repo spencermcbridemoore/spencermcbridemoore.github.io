@@ -1,10 +1,10 @@
 ---
 title: "Presentation on Numerical Methods: Lindbladian Runge-Kutta & Applied Computer Science"
 author: Spencer Moore
-date: 2023-08-01
+date: 2023-08-15
 categories: [numerical, quantum]
 tags: [Numerical, Modeling, Quantum RF]
-description: "Presentation for Prospective Numerical Quantum RF Project"
+description: "Presentation for Prospective Numerical Quantum RF Project: Lindbladian"
 ---
 
 ## Lindbladian Formalism  

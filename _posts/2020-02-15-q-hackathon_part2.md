@@ -4,7 +4,7 @@ author: Spencer Moore
 date: 2020-02-15
 categories: [hackathon, quantum computing]
 tags: [IBM, hackathon, quantum computing]
-description: "IBM Grover's Algorithm Hackathon"
+description: "IBM Grover's Algorithm Hackathon: details"
 ---
 
 

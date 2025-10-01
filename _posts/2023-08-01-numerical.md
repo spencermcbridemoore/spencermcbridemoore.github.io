@@ -4,7 +4,7 @@ author: Spencer Moore
 date: 2023-08-01
 categories: [numerical, quantum]
 tags: [Numerical, Modeling, Quantum RF]
-description: "Presentation for Prospective Numerical Quantum RF Project"
+description: "Presentation for Prospective Numerical Quantum RF Project: Runge-Kutta"
 ---
 
 ## Introduction
