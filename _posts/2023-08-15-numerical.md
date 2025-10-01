@@ -38,7 +38,7 @@ Use generators (`yield`) to reduce memory footprint.
 ## Example Improvement  
 Give NumPy fixed, contiguous buffers.
 
-![Example Improvement](../assets/img/posts/2023-08-15-numerical-21.png)
+![Example Improvement](/assets/img/posts/2023-08-15-numerical-21.png)
 
 ---
 
