@@ -8,6 +8,26 @@ tags: [CoT, faithfulness, interpretability, RL, mechanistic]
 description: "Presentation reviewing CoT faithfulness, causal interventions via circuit tracing, and RL follow-up experiments"
 ---
 
+<style>
+.slide-switcher { margin: 1rem 0; }
+.slide-tabs { display: flex; gap: 0; }
+.slide-tab {
+  flex: 1; padding: 0.5rem 0.25rem; text-align: center;
+  cursor: pointer; border: 1px solid var(--border-color, #ddd);
+  background: var(--card-bg, #f8f8f8);
+  font-size: 0.85rem; transition: all 0.15s;
+  user-select: none;
+}
+.slide-tab:hover { opacity: 0.85; }
+.slide-tab.active {
+  background: var(--link-color, #2a7ae2);
+  color: #fff; font-weight: 600;
+}
+.slide-panel { display: none; }
+.slide-panel.active { display: block; }
+.slide-panel img { width: 100%; display: block; }
+</style>
+
 # Do Reasoning Models Actually Say What They Think?
 
 This post covers a presentation I gave reviewing three interconnected papers on **chain-of-thought (CoT) faithfulness** in large language models:
@@ -46,11 +66,22 @@ This matters because later we'll be tracing *which features in these layers* act
 
 ## Step 0: From Final Residuals to Deterministic Output
 
-![Step 0 T0](/assets/img/posts/2026-02-09-cot-faithfulness-03.png)
-
-![Step 0 T1](/assets/img/posts/2026-02-09-cot-faithfulness-04.png)
-
-![Step 0 T2](/assets/img/posts/2026-02-09-cot-faithfulness-05.png)
+<div class="slide-switcher">
+  <div class="slide-tabs">
+    <div class="slide-tab active" data-idx="0">T = 0.00</div>
+    <div class="slide-tab" data-idx="1">T = 1.00</div>
+    <div class="slide-tab" data-idx="2">T = 2.00</div>
+  </div>
+  <div class="slide-panel active" data-idx="0">
+    <img src="/assets/img/posts/2026-02-09-cot-faithfulness-03.png" alt="Step 0 — T = 0 (deterministic)" />
+  </div>
+  <div class="slide-panel" data-idx="1">
+    <img src="/assets/img/posts/2026-02-09-cot-faithfulness-04.png" alt="Step 0 — T = 1 (stochastic)" />
+  </div>
+  <div class="slide-panel" data-idx="2">
+    <img src="/assets/img/posts/2026-02-09-cot-faithfulness-05.png" alt="Step 0 — T = 2 (high temperature)" />
+  </div>
+</div>
 
 The pipeline from hidden state to output token: final residual $\mathbf{h}^{(L)}$ -> unembedding matrix $\mathbf{W}_U$ -> logits $\mathbf{z}$ -> temperature scaling $\mathbf{z}' = \mathbf{z}/T$ -> softmax -> token selection.
 
@@ -149,11 +180,22 @@ Chen et al. (2025) use these tools from Anthropic (2025) to **verify whether CoT
 
 ## Circuit Tracing: Three Modes of Reasoning
 
-![Circuit Tracing Faithful](/assets/img/posts/2026-02-09-cot-faithfulness-13.png)
-
-![Circuit Tracing Bullshitting](/assets/img/posts/2026-02-09-cot-faithfulness-14.png)
-
-![Circuit Tracing Motivated Reasoning](/assets/img/posts/2026-02-09-cot-faithfulness-15.png)
+<div class="slide-switcher">
+  <div class="slide-tabs">
+    <div class="slide-tab active" data-idx="0">Faithful Reasoning</div>
+    <div class="slide-tab" data-idx="1">Bullshitting</div>
+    <div class="slide-tab" data-idx="2">Motivated Reasoning</div>
+  </div>
+  <div class="slide-panel active" data-idx="0">
+    <img src="/assets/img/posts/2026-02-09-cot-faithfulness-13.png" alt="Circuit Tracing — Faithful Reasoning" />
+  </div>
+  <div class="slide-panel" data-idx="1">
+    <img src="/assets/img/posts/2026-02-09-cot-faithfulness-14.png" alt="Circuit Tracing — Bullshitting" />
+  </div>
+  <div class="slide-panel" data-idx="2">
+    <img src="/assets/img/posts/2026-02-09-cot-faithfulness-15.png" alt="Circuit Tracing — Motivated Reasoning" />
+  </div>
+</div>
 
 Using sparse autoencoder features and gradient-based attribution on Claude 3.5 Haiku, Anthropic identifies three distinct internal reasoning modes:
 
@@ -167,13 +209,26 @@ Using sparse autoencoder features and gradient-based attribution on Claude 3.5 H
 
 ## Causal Intervention: Proving Features Are Real
 
-![Causal Intervention Baseline](/assets/img/posts/2026-02-09-cot-faithfulness-16.png)
-
-![Causal Intervention Swap](/assets/img/posts/2026-02-09-cot-faithfulness-17.png)
-
-![Causal Intervention Suppress](/assets/img/posts/2026-02-09-cot-faithfulness-18.png)
-
-![Causal Intervention Hallucination](/assets/img/posts/2026-02-09-cot-faithfulness-19.png)
+<div class="slide-switcher">
+  <div class="slide-tabs">
+    <div class="slide-tab active" data-idx="0">Baseline</div>
+    <div class="slide-tab" data-idx="1">Swap Texas&#8594;California</div>
+    <div class="slide-tab" data-idx="2">Suppress &#8220;rabbit&#8221;</div>
+    <div class="slide-tab" data-idx="3">Force Hallucination</div>
+  </div>
+  <div class="slide-panel active" data-idx="0">
+    <img src="/assets/img/posts/2026-02-09-cot-faithfulness-16.png" alt="Causal Intervention — Baseline" />
+  </div>
+  <div class="slide-panel" data-idx="1">
+    <img src="/assets/img/posts/2026-02-09-cot-faithfulness-17.png" alt="Causal Intervention — Swap Texas to California" />
+  </div>
+  <div class="slide-panel" data-idx="2">
+    <img src="/assets/img/posts/2026-02-09-cot-faithfulness-18.png" alt="Causal Intervention — Suppress rabbit" />
+  </div>
+  <div class="slide-panel" data-idx="3">
+    <img src="/assets/img/posts/2026-02-09-cot-faithfulness-19.png" alt="Causal Intervention — Force Hallucination" />
+  </div>
+</div>
 
 Finding features isn't enough -- researchers **modify** them and observe output changes. The causal intervention argument: Observe feature F activates -> Modify F (suppress, amplify, swap) -> Output changes predictably -> F is **causally involved**.
 
@@ -203,3 +258,19 @@ I raised four angles of critique on this work:
 ---
 
 *References: Wei et al. (2022), "Chain-of-Thought Prompting Elicits Reasoning in Large Language Models" (NeurIPS); Chen et al. (2025), "Reasoning Models Don't Always Say What They Think"; Anthropic (2025), "Circuit Tracing: Revealing Computational Graphs in Language Models" / "On the Biology of a Large Language Model" (March 2025).*
+
+<script>
+document.querySelectorAll('.slide-switcher').forEach(function(sw) {
+  sw.querySelectorAll('.slide-tab').forEach(function(tab) {
+    tab.addEventListener('mouseenter', function() {
+      var idx = this.dataset.idx;
+      sw.querySelectorAll('.slide-tab').forEach(function(t) {
+        t.classList.toggle('active', t.dataset.idx === idx);
+      });
+      sw.querySelectorAll('.slide-panel').forEach(function(p) {
+        p.classList.toggle('active', p.dataset.idx === idx);
+      });
+    });
+  });
+});
+</script>
