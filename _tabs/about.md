@@ -99,4 +99,4 @@ Co‑developed a prototype quantum‑enhanced game, overcoming real‑time engin
 
 ---
 
-*Feel free to replace the image placeholders (`/assets/img/about/...`) with your own photos.*
+<!--- *Feel free to replace the image placeholders (`/assets/img/about/...`) with your own photos.* -->
