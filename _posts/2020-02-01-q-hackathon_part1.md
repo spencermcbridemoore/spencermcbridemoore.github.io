@@ -5,6 +5,7 @@ date: 2020-02-01
 categories: [hackathon, quantum computing]
 tags: [IBM, hackathon, quantum computing]
 description: "IBM Grover's Algorithm Hackathon: overview "
+image: /assets/img/posts/2019-q-hackathon-33to40.gif
 ---
 
 ## IBM Quantum Challenge 2019 — Using Qiskit

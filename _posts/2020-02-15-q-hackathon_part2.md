@@ -5,6 +5,7 @@ date: 2020-02-15
 categories: [hackathon, quantum computing]
 tags: [IBM, hackathon, quantum computing]
 description: "IBM Grover's Algorithm Hackathon: details"
+image: /assets/img/posts/2019-q-hackathon-89.gif
 ---
 
 

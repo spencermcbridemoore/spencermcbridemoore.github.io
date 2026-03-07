@@ -6,6 +6,7 @@ math: true
 categories: [machine learning, LLM]
 tags: [CoT, faithfulness, interpretability, RL, mechanistic]
 description: "Presentation reviewing CoT faithfulness, causal interventions via circuit tracing, and RL follow-up experiments"
+image: /assets/img/posts/2026-02-09-cot-faithfulness-07.png
 ---
 
 <style>

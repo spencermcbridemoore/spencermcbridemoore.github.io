@@ -5,6 +5,7 @@ date: 2023-08-15
 categories: [numerical, quantum]
 tags: [Numerical, Modeling, Quantum RF]
 description: "Presentation for Prospective Numerical Quantum RF Project: Lindbladian"
+image: /assets/img/posts/2023-08-15-numerical-17.png
 ---
 
 ## Lindbladian Formalism  
