@@ -33,6 +33,12 @@ image: /assets/img/posts/YYYY-MM-DD-slug-NN.png   # home-page thumbnail + social
 - Presentation posts: one slide image per section, a `##` heading, a few paragraphs of
   commentary, sections separated by `---`. Don't embed the title slide; use a markdown
   `#` heading instead.
+- Acronyms: Spencer prefers hover definitions to using fewer acronyms. Define them with
+  kramdown abbreviations at the end of the post (`*[IEA]: International Energy Agency`);
+  every occurrence then renders as `<abbr title="…">`. Only add expansions you're sure of.
+- Local video: `{% include embed/video.html src='/assets/img/posts/….mp4' poster='/assets/img/posts/….png' title='…' %}`
+  (Chirpy's own include; it always shows controls, and `loop=true muted=true autoplay=true`
+  are optional).
 
 ## Images
 
@@ -61,6 +67,36 @@ a `<style>` block at the top, a `<div class="slide-switcher">` block per section
   so each tab sets an explicit `permalink:` (e.g. `/about/`). A new tab needs one too.
 - `_tabs/about.md`: the commented-out blocks are placeholders waiting on real photos/text,
   not dead code — leave them unless asked.
+
+## The AI environmental-impact talk post
+
+`_posts/2026-09-18-ai-environmental-impact.md` is Spencer's AI-PER community meeting
+talk (18 Sep 2026) on AI's environmental footprint. It is a transcription of the deck,
+not a write-up, and it has rules the other posts don't:
+
+- The text under each slide is that slide's own text, verbatim. Don't paraphrase,
+  shorten, tidy or add to it. Every number carries its boundary (a share of what, which
+  year, measured or modelled), and dropping a clause changes the claim. The only added
+  text is the intro box, structural labels ("Text in the figure:", "Image captions:",
+  "Photo caption:") and the closing line.
+- Don't add numbers, sources, links or commentary that weren't on a slide. The research
+  and source checking live outside this repo, in Spencer's claude.ai Project "Slide for
+  Dr. Chen on AI Impact"; a change to any figure starts there.
+- No reference list, source table or link to one until Spencer says the
+  reference-vetting pass is done. Codes like "P12" on some slides point at that table;
+  leave them as they are.
+- Never commit the source deck (`ai-footprint-talk-*.pptx`) here: its speaker notes are
+  internal working notes and would be published with the site.
+- Images: `assets/img/posts/2026-09-18-ai-environmental-impact-NN.png`, NN = slide
+  number. Slide 1 (the title) isn't embedded, and `-29` doubles as the post's `image:`.
+  They were rendered from the deck at 1920×1080 with LibreOffice, so slides 2–4 and
+  30–32 show a substitute for Trebuchet MS; a PowerPoint export (File → Export → PNG)
+  can replace them under the same names. Stray `*` characters the deck builder left on
+  slides 18 and 22–24 were removed before rendering.
+- Slide 3's screen capture is `…-03.mp4`, with `…-03-poster.png` as its poster.
+- The `<style>` block at the top lets this post's table cells wrap. Chirpy sets
+  `white-space: nowrap` on table cells, which turns sentence-length cells into one very
+  long line.
 
 ## Local preview
 
