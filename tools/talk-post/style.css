@@ -1,0 +1,31 @@
+  /* Tables in this post hold sentences, not short values, so let the cells wrap. */
+  .content .table-wrapper > table th,
+  .content .table-wrapper > table td { white-space: normal; vertical-align: top; min-width: 7rem; }
+
+  /* Each slide sits beside its own text; the two stack when the column is narrow. */
+  .sl { container-type: inline-size; display: flex; flex-wrap: wrap; align-items: flex-start; gap: 0.75rem 1.5rem; margin: 1rem 0 1.5rem; }
+  .sl > .sl-fig, .sl > .sl-txt { flex: 1 1 100%; min-width: 0; }
+  .sl-fig > p { position: relative; margin: 0; line-height: 0; }
+  .content .sl-fig > p > a.popup { display: block; margin: 0; }
+  .sl-fig img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; border-radius: 2px; box-shadow: 0 0 0 1px rgba(128, 128, 128, 0.35); }
+  .sl-txt > :first-child { margin-top: 0; }
+  .sl-txt > :last-child { margin-bottom: 0; }
+  @container (min-width: 40rem) {
+    .sl > .sl-fig { flex: 0 0 46%; position: sticky; top: 1rem; }
+    .sl > .sl-txt { flex: 1 1 0; }
+    .sl-txt .table-wrapper > table th,
+    .sl-txt .table-wrapper > table td { min-width: 5rem; padding: 0.35rem 0.4rem; font-size: 0.9em; }
+    /* A slide whose text is a wide table: the slide stays pinned on top and the table runs full width beneath it. */
+    .sl.sl-stack > .sl-fig { flex: 0 0 100%; top: 0; z-index: 2; padding: 0.5rem 0 0.75rem; background: var(--main-bg, #fff); }
+    .sl.sl-stack > .sl-fig > p { max-width: 30rem; margin: 0 auto; }
+    .sl.sl-stack > .sl-txt { flex: 0 0 100%; }
+    .sl.sl-stack .sl-txt .table-wrapper > table th,
+    .sl.sl-stack .sl-txt .table-wrapper > table td { min-width: 7rem; padding: 0.5rem 0.75rem; font-size: 1em; }
+  }
+
+  /* Linked highlight: a piece of text and its place on the slide light up together. */
+  .sl-r { position: absolute; pointer-events: none; border-radius: 2px; opacity: 0; background: rgba(255, 179, 0, 0.3); outline: 2px solid rgba(255, 145, 0, 0.95); transition: opacity 0.12s; }
+  .sl-r.on { opacity: 1; }
+  .sl-txt [data-k], h2[data-k] > span { border-radius: 2px; transition: background-color 0.12s, box-shadow 0.12s; }
+  .sl-txt [data-k].on, h2[data-k].on > span { background-color: rgba(255, 179, 0, 0.28); box-shadow: 0 0 0 0.25rem rgba(255, 179, 0, 0.28); }
+  .sl-txt th[data-k].on, .sl-txt td[data-k].on { box-shadow: none; }

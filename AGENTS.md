@@ -74,7 +74,10 @@ a `<style>` block at the top, a `<div class="slide-switcher">` block per section
 talk (18 Sep 2026) on AI's environmental footprint. It is a transcription of the deck,
 not a write-up, and it has rules the other posts don't:
 
-- The text under each slide is that slide's own text, verbatim. Don't paraphrase,
+- The post is generated. Don't edit it by hand: the wording lives in
+  `tools/talk-post/transcript.md`, and `python tools/talk-post/build_post.py` (run from
+  the repo root) writes the post from it. See "How the talk post is built" below.
+- The text beside each slide is that slide's own text, verbatim. Don't paraphrase,
   shorten, tidy or add to it. Every number carries its boundary (a share of what, which
   year, measured or modelled), and dropping a clause changes the claim. The only added
   text is the intro box, structural labels ("Text in the figure:", "Image captions:",
@@ -89,14 +92,44 @@ not a write-up, and it has rules the other posts don't:
   internal working notes and would be published with the site.
 - Images: `assets/img/posts/2026-09-18-ai-environmental-impact-NN.png`, NN = slide
   number. Slide 1 (the title) isn't embedded, and `-29` doubles as the post's `image:`.
-  They were rendered from the deck at 1920×1080 with LibreOffice, so slides 2–4 and
-  30–32 show a substitute for Trebuchet MS; a PowerPoint export (File → Export → PNG)
-  can replace them under the same names. Stray `*` characters the deck builder left on
-  slides 18 and 22–24 were removed before rendering.
+  All are LibreOffice renders of the deck at 1920×1080. Slides 2–4 and 30–32 were
+  rendered on Windows with the real Trebuchet MS (`make_regions.py --write-rendered`);
+  the other 25 come from a Linux sandbox that used stand-ins of the same widths for
+  Calibri and Cambria. Stray `*` characters the deck builder left on slides 18 and
+  22–24 were removed before rendering. Replacing a slide image moves its text, so
+  regenerate `regions.json` with it.
 - Slide 3's screen capture is `…-03.mp4`, with `…-03-poster.png` as its poster.
-- The `<style>` block at the top lets this post's table cells wrap. Chirpy sets
-  `white-space: nowrap` on table cells, which turns sentence-length cells into one very
-  long line.
+
+### How the talk post is built
+
+Each slide is a `div.sl`: the image in `.sl-fig`, the slide's text in `.sl-txt`, side by
+side when the column is wide enough and stacked otherwise. Slides 9 and 10, whose text is
+a wide table, get `.sl-stack`, which pins the slide on top instead. Hovering a piece of
+text or its place on the slide highlights both: a text element and the empty
+`<span class="sl-r">` boxes laid over the image are paired by a shared `data-k` value.
+
+It all comes from `tools/talk-post/`, which is not published (`tools` is excluded in
+`_config.yml`):
+
+- `transcript.md`: the plain post, text under each slide. Edit wording here, under the
+  rules above, then run `build_post.py`.
+- `regions.json`: where each paragraph of native slide text sits on its image, as
+  fractions of the slide. `make_regions.py` reads it from the deck's own layout and
+  snaps it to the published image.
+- `figure-regions.json`: the same for text inside the pictures on slides 7, 9, 12 and
+  16, found by text recognition (`make_figure_regions.py`, Windows only). Best effort:
+  a line it can't find is simply not linked.
+- `style.css`, `script.js`: inlined into the post. The production build joins lines, so
+  the script keeps its semicolons and uses no `//` comments. Chirpy sets
+  `white-space: nowrap` on table cells; the stylesheet undoes that so sentence-length
+  cells wrap.
+- `check_post.py`: the post matches the generator's output and carries the transcript's
+  text unchanged. With `--html <built page>` it also checks the links on the built page;
+  with `--deck <pptx>` it checks the transcript against the deck, word for word (slide
+  12's tier tag is deliberately not transcribed).
+
+The two `make_*` scripts need the deck and a scratch folder, both kept outside the repo.
+After running either, look at the overlay images it writes before trusting the boxes.
 
 ## Local preview
 
